@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctor List</title>
+</head>
+<body>
+<ul>
+    {% for doctor in doctors %}
+        <li><a href="{% url 'detail' doctor.id %}">{{ doctor.last_name }}, {{ doctor.first_name }}</a></li>
+    {% endfor %}
+</ul>
+<p>
+    <a href="{% url 'add' %}">Add a doctor</a>
+</p>
+</body>
+</html>

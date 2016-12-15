@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Doctor Details</title>
+</head>
+<body>
+    <h2>{{ doctor.first_name }} {{ doctor.last_name }}</h2>
+    {% if doctor.dob %}
+        <h3>Born on {{ doctor.dob }}</h3>
+    {% endif %}
+    <h3>
+        Specialties:
+    </h3>
+    <ul>
+    {% for specialty in doctor.specialties.all %}
+        <li>{{ specialty.name }}</li>
+    {% endfor %}
+    </ul>
+</body>
+</html>
